@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amazon.MAUI.Views.ConfigManagementView"
+             Title="ConfigManagementView">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to TAX CONFIGURATION!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <HorizontalStackLayout>
+            <Label Text="Current Tax Rate:" FontAttributes="Bold" />
+            <Label Text="{Binding TaxRate}" FontAttributes="Bold" />
+            <Label Text="%" FontAttributes="Bold" />
+        </HorizontalStackLayout>
+        
+        <Label Text="Enter Tax Rate:" FontAttributes="Bold" />
+        <Entry Text="{Binding TaxRate}" Keyboard="Numeric"/>
+        
+        
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="20,30,20,0">
+            <Button Text="Submit" Clicked="TaxClick" CommandParameter="{Binding}" BackgroundColor="MediumPurple" TextColor="White" WidthRequest="100" Margin="10,0"/>
+            <Button Text="Return to Menu" Clicked="MenuClick" BackgroundColor="Lavender" TextColor="Black" WidthRequest="150"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amazon.MAUI.Views.WishListManagementView"
+             Title="WishListManagementView"
+             NavigatedTo="ContentPage_NavigatedTo"
+             NavigatedFrom="ContentPage_NavigatedFrom">
+    <StackLayout>
+
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Label Text="Cart ID" WidthRequest="200" FontAttributes="Bold"/>
+            <Label Text="Actions" WidthRequest="50" FontAttributes="Bold"/>
+        </StackLayout>
+        
+        <ListView ItemsSource="{Binding Carts}" SelectedItem="{Binding SelectedCart}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding DisplayId}" WidthRequest="150" VerticalOptions="Center"/>
+                            <Button Text="View Items" Clicked="ViewItemsClick" CommandParameter="{Binding}" WidthRequest="100" VerticalOptions="Center" Margin="10" BackgroundColor="Lavender"/>
+                            <Button Text="Check Out" Clicked="CheckoutClick" CommandParameter="{Binding}" WidthRequest="100" VerticalOptions="Center" Margin="10" BackgroundColor="Lavender"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Add New Cart" Clicked="AddCartClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="PeachPuff"/>
+        <Button Text="Return to Shop Menu" Clicked="ShopClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="Aqua"/>
+    </StackLayout>
+</ContentPage>

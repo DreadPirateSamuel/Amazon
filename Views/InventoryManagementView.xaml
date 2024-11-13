@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amazon.MAUI.Views.InventoryManagementView"
+             Title="Inventory Management"
+             NavigatedTo="ContentPage_NavigatedTo"
+             NavigatedFrom="ContentPage_NavigatedFrom">
+    <StackLayout
+        Padding="30,0"
+        Spacing="25">
+        <Label 
+            Text="Welcome to the inventory management page!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            TextColor="LightBlue"
+        />
+
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Label Text="ID" WidthRequest="50" FontAttributes="Bold"/>
+            <Label Text="Name" WidthRequest="75" FontAttributes="Bold"/>
+            <Label Text="Description" WidthRequest="150" FontAttributes="Bold"/>
+            <Label Text="Price" WidthRequest="100" FontAttributes="Bold"/>
+            <Label Text="Quantity" WidthRequest="100" FontAttributes="Bold"/>
+            <Label Text="BOGO?" WidthRequest="100" FontAttributes="Bold" />
+            <Label Text="Markdown" WidthRequest="100" FontAttributes="Bold" Margin="0,0,75,0"/>
+            <Label Text="Actions" WidthRequest="160" FontAttributes="Bold" HorizontalOptions="End"/>
+        </StackLayout>
+
+        <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding DisplayId}" WidthRequest="50" VerticalOptions="Center"/>
+                            <Label Text="{Binding Name}" WidthRequest="75" VerticalOptions="Center"/>
+                            <Label Text="{Binding Description}" WidthRequest="150" VerticalOptions="Center"/>
+                            <Label Text="{Binding Price, StringFormat='{}{0:C}'}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Label Text="{Binding Quantity}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Label Text="{Binding BOGO}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Label Text="{Binding Markdown,StringFormat='{0}%'}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Button Text="Update" WidthRequest="100" VerticalOptions="Center" 
+                                    Margin="0,0,10,0" BackgroundColor="MediumPurple" 
+                                    CommandParameter="{Binding}" Clicked="InventoryUpdateClick"/>
+                            <Button Text="Delete" WidthRequest="100" Clicked="InventoryDeleteClick"
+                                    VerticalOptions="Center" BackgroundColor="Lavender" 
+                                    Command="{Binding Path=DeleteCommand}" CommandParameter="{Binding}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <VerticalStackLayout>
+            <Button Text="Add Item to Inventory" Clicked="InventoryAddClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="PeachPuff"/>
+            <Button Text="Import CSV" Clicked="ImportCsvClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="LightGreen"/>
+            <Button Text="Return to Main Menu" Clicked="MainMenuClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="Aqua"/>
+        </VerticalStackLayout>
+    </StackLayout>
+</ContentPage>

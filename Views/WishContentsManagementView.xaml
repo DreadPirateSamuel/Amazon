@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amazon.MAUI.Views.WishContentsManagementView"
+             Title="WishContentsManagementView"
+             NavigatedTo="ContentPage_NavigatedTo"
+             NavigatedFrom="ContentPage_NavigatedFrom">
+    <VerticalStackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Label Text="{Binding TestCartID, StringFormat='Cart #{0} Contents:'}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" WidthRequest="800"/>
+        </StackLayout>
+
+
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Label Text="ID" WidthRequest="50" FontAttributes="Bold" VerticalOptions="Center"/>
+            <Label Text="Name" WidthRequest="125" FontAttributes="Bold" VerticalOptions="Center"/>
+            <Label Text="Description" WidthRequest="200" FontAttributes="Bold" VerticalOptions="Center"/>
+            <Label Text="Price" WidthRequest="100" FontAttributes="Bold" VerticalOptions="Center"/>
+            <Label Text="Quantity" WidthRequest="100" FontAttributes="Bold" VerticalOptions="Center"/>
+            <Label Text="BOGO?" WidthRequest="120" FontAttributes="Bold" />
+            <Label Text="Markdown" WidthRequest="100" FontAttributes="Bold"/>
+            <Label Text="Total for this Item Type" WidthRequest="150" FontAttributes="Bold" Margin="0,0,75,0"/>
+        </StackLayout>
+
+        <!-- ListView for Items -->
+        <ListView ItemsSource="{Binding TestItems}"
+                  SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding DisplayId}" WidthRequest="50" VerticalOptions="Center"/>
+                            <Label Text="{Binding Name}" WidthRequest="125" VerticalOptions="Center"/>
+                            <Label Text="{Binding Description}" WidthRequest="200" VerticalOptions="Center"/>
+                            <Label Text="{Binding Price, StringFormat='{}{0:C}'}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Label Text="{Binding Quantity}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Label Text="{Binding BOGO}" WidthRequest="120" VerticalOptions="Center"/>
+                            <Label Text="{Binding Markdown,StringFormat='{0}%'}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Button Text="Remove One" Clicked="ShopDeleteClick" CommandParameter="{Binding}" WidthRequest="150" VerticalOptions="Center" Margin="10" BackgroundColor="Lavender"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add Items To Cart" Clicked="ShopAddClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="PeachPuff"/>
+        <Button Text="Previous Page" Clicked="WishListClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="Red"/>
+    </VerticalStackLayout>
+</ContentPage>

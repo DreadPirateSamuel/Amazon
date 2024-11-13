@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Amazon.MAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Amazon.MAUI"
+    xmlns:views="clr-namespace:Amazon.MAUI.Views"
+    xmlns:invViews="clr-namespace:Amazon.MAUI.Views.InventoryViews"
+    xmlns:shpViews="clr-namespace:Amazon.MAUI.Views.ShopViews"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Amazon.MAUI">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="InventoryManagement"
+        ContentTemplate="{DataTemplate views:InventoryManagementView}"
+        Route="InventoryManagementPage" />
+
+    <ShellContent
+        Title="InventoryAdd"
+        ContentTemplate="{DataTemplate invViews:InventoryAddView}"
+        Route="InventoryAddPage" />
+
+
+    <ShellContent
+        Title="InventoryUpdate"
+        ContentTemplate="{DataTemplate invViews:InventoryUpdateView}"
+        Route="InventoryUpdatePage" />
+
+    <ShellContent
+        Title="ShopManagement"
+        ContentTemplate="{DataTemplate views:ShopManagementView}"
+        Route="ShopManagementPage" />
+
+    <ShellContent
+        Title="ShopAdd"
+        ContentTemplate="{DataTemplate shpViews:ShopAddView}"
+        Route="ShopAddPage" />
+
+    <ShellContent
+        Title="WishList"
+        ContentTemplate="{DataTemplate views:WishListManagementView}"
+        Route="WishListPage" />
+
+    <ShellContent
+        Title="CheckOout"
+        ContentTemplate="{DataTemplate views:CheckoutManagementView}"
+        Route="CheckoutPage" />
+
+
+    <ShellContent
+        Title="ConfigManagement"
+        ContentTemplate="{DataTemplate views:ConfigManagementView}"
+        Route="ConfigManagementPage" />
+
+    <ShellContent
+        Title="WishListContents"
+        ContentTemplate="{DataTemplate views:WishContentsManagementView}"
+        Route="WishContentsPage" />
+
+</Shell>

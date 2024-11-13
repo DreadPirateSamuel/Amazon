@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amazon.MAUI.Views.InventoryViews.InventoryUpdateView"
+             Title="Updating Item in Inventory"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="{Binding DisplayId, StringFormat='Updating Item {0}'}" FontSize="Large" HorizontalOptions="Center"/>
+
+            <Label Text="Name" FontAttributes="Bold" />
+            <Entry Text="{Binding Name}" Placeholder="Enter Name"/>
+
+            <Label Text="Description" FontAttributes="Bold" />
+            <Entry Text="{Binding Description}" Placeholder="Enter Description"/>
+
+            <Label Text="Price" FontAttributes="Bold" />
+            <Entry Text="{Binding Price}"  Keyboard="Numeric"/>
+
+            <Label Text="Quantity" FontAttributes="Bold" />
+            <Entry Text="{Binding Quantity}" Keyboard="Numeric"/>
+
+            <Label Text="BOGO?" FontAttributes="Bold" />
+            <Entry Text="{Binding BOGO}" Placeholder="(Y/N)"/>
+
+            <Label Text="Markdown Amount" FontAttributes="Bold" />
+            <Entry Text="{Binding Markdown}" Keyboard="Numeric"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,20,0">
+                <Button Text="Update" Clicked="UpdateClick" Command="{Binding Path=UpdateCommand}" CommandParameter="{Binding}" BackgroundColor="MediumPurple" TextColor="White" WidthRequest="100" Margin="10,0"/>
+                <Button Text="Cancel" Clicked="InventoryClick" BackgroundColor="Lavender" TextColor="Black" WidthRequest="150"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

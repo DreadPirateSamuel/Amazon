@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amazon.MAUI.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="Welcome to Amazon! Would you like to edit the inventory or shop?"
+                FontSize="Large"
+                />
+            <Button 
+                Text="Inventory"
+                Clicked="InventoryClick"
+                BackgroundColor="LightBlue"
+                />
+            <Button
+                Text="Shop"
+                Clicked="ShopClick"
+                BackgroundColor="LightGreen"
+                />
+
+            <Button
+                Text="Configure"
+                Clicked="ConfigClick"
+                BackgroundColor="OrangeRed"
+                />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

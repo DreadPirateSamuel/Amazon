@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amazon.MAUI.Views.ShopViews.ShopAddView"
+             Title="Adding Items to Cart"
+             NavigatedTo="ContentPage_NavigatedTo"
+             NavigatedFrom="ContentPage_NavigatedFrom">
+    <StackLayout
+    Padding="30,0"
+    Spacing="25"
+    x:Name="Spicy">
+        <Label 
+        Text="Here is our current inventory!"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" 
+        TextColor="LightBlue"
+    />
+
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Label Text="ID" WidthRequest="50" FontAttributes="Bold"/>
+            <Label Text="Name" WidthRequest="75" FontAttributes="Bold"/>
+            <Label Text="Description" WidthRequest="200" FontAttributes="Bold"/>
+            <Label Text="Price" WidthRequest="100" FontAttributes="Bold"/>
+            <Label Text="Quantity" WidthRequest="75" FontAttributes="Bold" Margin="0,0,75,0"/>
+        </StackLayout>
+
+        <ListView ItemsSource="{Binding Source={x:Reference Spicy}, Path=BindingContext.InventoryViewModel.Items}" 
+                  SelectedItem="{Binding Source={x:Reference Spicy}, Path=BindingContext.InventoryViewModel.SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding DisplayId}" WidthRequest="50" VerticalOptions="Center"/>
+                            <Label Text="{Binding Name}" WidthRequest="75" VerticalOptions="Center"/>
+                            <Label Text="{Binding Description}" WidthRequest="200" VerticalOptions="Center"/>
+                            <Label Text="{Binding Price, StringFormat='{}{0:C}'}" WidthRequest="100" VerticalOptions="Center"/>
+                            <Label Text="{Binding Quantity}" WidthRequest="75" VerticalOptions="Center"/>
+                            <Button Text="Add One" WidthRequest="100" VerticalOptions="Center" Command="{Binding Source={x:Reference Spicy}, Path=BindingContext.ShopViewModel.AddICommand}"
+                            Clicked="ShopClick" Margin="0,0,10,0" BackgroundColor="MediumPurple" 
+                            CommandParameter="{Binding}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <VerticalStackLayout>
+            <Button Text="Return to Wishlist Page" Clicked="WishListClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="GreenYellow"/>
+            <Button Text="Return to Shopping Page" Clicked="ShoppingPageClick" WidthRequest="700" HorizontalOptions="Center" Margin="10" BackgroundColor="Aqua"/>
+        </VerticalStackLayout>
+    </StackLayout>
+</ContentPage>
