@@ -1,0 +1,5 @@
+C:\Users\sam06\source\repos\Amazon\Amazon\obj\Debug\net8.0\Amazon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sam06\source\repos\Amazon\Amazon\obj\Debug\net8.0\Amazon.AssemblyInfoInputs.cache
+C:\Users\sam06\source\repos\Amazon\Amazon\obj\Debug\net8.0\Amazon.AssemblyInfo.cs
+C:\Users\sam06\source\repos\Amazon\Amazon\obj\Debug\net8.0\Amazon.csproj.CoreCompileInputs.cache
+C:\Users\sam06\source\repos\Amazon\Amazon\obj\Debug\net8.0\Amazon.sourcelink.json

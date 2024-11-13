@@ -1,0 +1,13 @@
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\bin\Debug\net8.0\Amazon.Library.deps.json
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\bin\Debug\net8.0\Amazon.Library.dll
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\bin\Debug\net8.0\Amazon.Library.pdb
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.AssemblyInfoInputs.cache
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.AssemblyInfo.cs
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.csproj.CoreCompileInputs.cache
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.dll
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\refint\Amazon.Library.dll
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.pdb
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\ref\Amazon.Library.dll
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.sourcelink.json
+C:\Users\sam06\source\repos\Amazon\Amazon.Library\obj\Debug\net8.0\Amazon.Library.csproj.AssemblyReference.cache
